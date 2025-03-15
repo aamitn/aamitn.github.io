@@ -142,3 +142,18 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
+
+
+/* Light Mode Grid - More Intense */
+.bg-grid-small {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 12px 12px; /* Smaller size for denser grid */
+}
+
+/* Dark Mode Grid - Brighter & Highlighted */
+.dark .bg-grid-small-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 1.5px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 1.5px, transparent 1px);
+  background-size: 12px 12px; /* Keeps the mesh fine and dense */
+}

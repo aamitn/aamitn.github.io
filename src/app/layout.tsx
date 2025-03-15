@@ -4,8 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans1,JetBrains_Mono as FontSans } from "next/font/google";
 import "./globals.css";
+import CursorLightEffect from "@/components/CursorLightEffect";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,10 +21,10 @@ export const metadata: Metadata = {
   },
   description: DATA.description,
   openGraph: {
-    title: `${DATA.name}`,
+    title: DATA.name,
     description: DATA.description,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: DATA.name,
     locale: "en_US",
     type: "website",
   },
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: DATA.name,
     card: "summary_large_image",
   },
   verification: {
@@ -57,14 +58,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background dark:bg-gray-900 text-gray-900 dark:text-white font-sans antialiased",
           fontSans.variable
         )}
       >
+        {/* Cursor Light Effect & Mesh Background */}
+        <CursorLightEffect />
+        
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {children}
+            {/* Moved Navbar to the top for better navigation */}
             <Navbar />
+
+            {/* Content Wrapper with padding control */}
+            <main className="max-w-2xl mx-auto px-6 py-8 sm:py-16">{children}</main>
           </TooltipProvider>
         </ThemeProvider>
       </body>

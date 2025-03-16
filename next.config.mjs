@@ -13,9 +13,7 @@ const nextConfig = {
       },
     ],
   },
-  assetPrefix: isProd ? '/aamitn.github.io/' : '',
-  basePath: isProd ? '/aamitn.github.io' : '',
-  output: 'export'
+
 };
 
 export default nextConfig;

@@ -241,7 +241,7 @@ export default function Page() {
           id="projects"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }} // Repeats on every scroll
+          viewport={{ once: false, amount: 0.3 }} // Repeats on every scroll
           className="space-y-12 w-full py-12"
         >
           <motion.div variants={fadeInUp}>
@@ -287,80 +287,67 @@ export default function Page() {
         </motion.section>
 
 
-        <section id="hackathons" className="space-y-12 w-full py-12">
-      {/* Section Title */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ staggerChildren: 0.1 }}
-        className="flex flex-col items-center justify-center space-y-4 text-center"
-      >
-        <motion.div
-          variants={fadeInUp}
-          className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
-        >
+        <section id="hackathons">
+  <div className="space-y-12 w-full py-12">
+    {/* Title Section with Scroll Animation */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: BLUR_FADE_DELAY * 12, duration: 0.8 }}
+      viewport={{ once: true }}
+      className="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div className="space-y-2">
+        <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
           Hackathons
-        </motion.div>
-        <motion.h2
-          variants={fadeInUp}
-          className="text-3xl font-bold tracking-tighter sm:text-5xl"
-        >
+        </div>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
           I like building things
-        </motion.h2>
-        <motion.p
-          variants={fadeInUp}
-          className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
-        >
-          During my time in university, I attended {DATA.hackathons.length}+
-          hackathons. People from around the country would come together and
-          build incredible things in 2-3 days. It was eye-opening to see the
-          endless possibilities brought to life by a group of motivated and
-          passionate individuals.
-        </motion.p>
-      </motion.div>
+        </h2>
+        <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          During my time in university, I attended{" "}
+          {DATA.hackathons.length}+ hackathons. People from around the
+          country would come together and build incredible things in 2-3
+          days. It was eye-opening to see the endless possibilities
+          brought to life by a group of motivated and passionate
+          individuals.
+        </p>
+      </div>
+    </motion.div>
 
-      {/* Hackathon List */}
-      <ul className="relative space-y-6 border-l border-dashed pl-6">
-        {DATA.hackathons.map((hackathon, id) => (
-          <motion.li
-            key={hackathon.title + hackathon.dates}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-            variants={fadeInUp}
-            custom={0.1 + id * 0.1}
-            className="relative pl-6"
+    {/* Hackathons List Section with Scroll Animation */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: BLUR_FADE_DELAY * 14, duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+        {DATA.hackathons.map((project, id) => (
+          <motion.div
+            key={project.title + project.dates}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: BLUR_FADE_DELAY * 15 + id * 0.05,
+              duration: 0.6,
+            }}
+            viewport={{ once: true }}
           >
-            {/* Timeline Dot */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-                transition: { duration: 0.3, delay: 0.1 + id * 0.1 },
-              }}
-              className="absolute -left-3 top-2 h-4 w-4 rounded-full bg-purple-500 border-2 border-white"
-            ></motion.div>
-
-            {/* Hackathon Card */}
-            <motion.div
-              variants={fadeInUp}
-              custom={0.2 + id * 0.1}
-            >
-              <HackathonCard
-                title={hackathon.title}
-                description={hackathon.description}
-                location={hackathon.location}
-                dates={hackathon.dates}
-                image={hackathon.image}
-                links={hackathon.links}
-              />
-            </motion.div>
-          </motion.li>
+            <HackathonCard
+              title={project.title}
+              description={project.description}
+              location={project.location}
+              dates={project.dates}
+              image={project.image}
+              links={project.links}
+            />
+          </motion.div>
         ))}
       </ul>
-    </section>
+    </motion.div>
+  </div>
+</section>
 
 
       <motion.section

@@ -11,7 +11,7 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 
 - Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
 - Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
+- Includes a fully featured blog with MDX
 - Responsive for different devices
 - Optimized for Next.js and Vercel
 
@@ -42,6 +42,11 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
    ```
 
 5. Open the [Config file](./src/data/resume.tsx) and make changes
+
+6. Blog Content is in `content` folder
+
+7. Images and Assets are in `public` folder
+
 
 # License
 

@@ -1,0 +1,57 @@
+---
+title: "Git Cheatsheet"
+publishedAt: "2025-03-16"
+summary: "This is a comprehensive Git Cheatsheet i creted initally for personal usage, now giving away.."
+image: "/gitimage.png" 
+category: "git"
+---
+
+Here is the Link : https://www.notion.so/bitmutex/Git-Cheatsheet-1123cc3fc9d980e2a332c35fe3d6dca8?pvs=4
+
+
+```jsx
+console.log("Hello World");
+```
+
+*By default the active branch in a git repo is called **master**, however the default active branch for a repo created in GitHub is called **main.**
+
+| Type                  | Command                                                            | Function                                                                                  |
+|-----------------------|--------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| ONE TIME SETUP         | `git config --global user.name "[firstname lastname]"`              | Set a name that is identifiable for credit when reviewing version history                 |
+| ONE TIME SETUP         | `git config --global user.email "[valid-email]"`                    | Set an email address that will be associated with each history marker                     |
+| ONE TIME SETUP         | `git config --global color.ui auto`                                 | Set automatic command line coloring for Git for easy reviewing                           |
+| SETUP & INIT           | `git init`                                                          | Initialize an existing directory as a Git repository                                      |
+| SETUP & INIT           | `git clone [url]`                                                   | Retrieve an entire repository from a hosted location via URL                              |
+| STAGE & SNAPSHOT       | `git status`                                                        | Show modified files in working directory, staged for your next commit                    |
+| STAGE & SNAPSHOT       | `git add [fileName]` OR `git add .`                                 | Add a file as it looks now to your next commit (stage). Use `.` to add all modified files  |
+| STAGE & SNAPSHOT       | `git reset [fileName]` OR `git reset .`                             | Unstage a file while retaining the changes in working directory. Use `.` to unstage all    |
+| STAGE & SNAPSHOT       | `git diff`                                                          | Diff of what is changed but not staged                                                     |
+| STAGE & SNAPSHOT       | `git commit -m "[descriptive message]"`                             | Commit your staged content as a new commit snapshot                                       |
+| BRANCH & MERGE         | `git branch`                                                        | List your branches. A `*` will appear next to the currently active branch                |
+| BRANCH & MERGE         | `git branch [branch-name]`                                          | Create a new branch at the current commit                                                 |
+| BRANCH & MERGE         | `git branch -M [oldbranch] [newbranch]`                             | Rename an existing git branch, if oldbranch is not given like `git branch -M main`, it will rename the current active branch to `main`. |
+| BRANCH & MERGE         | `git checkout [branch-name]`                                        | Switch the active branch to another one                                                   |
+| BRANCH & MERGE         | `git checkout -b [new-branch]`                                      | Creates a new branch and switches the active branch to the new one. Runs two commands: 1. `git branch new-branch`, 2. `git checkout new-branch` |
+| BRANCH & MERGE         | `git merge [branch-name]`                                           | Merge the specified branch’s history into the current one                                 |
+| INSPECT & COMPARE      | `git log`                                                           | Show all commits in the current active branch’s history                                   |
+| INSPECT & COMPARE      | `git log branchB..branchA`                                          | Show the commits on branchA that are not on branchB                                        |
+| INSPECT & COMPARE      | `git log --follow [file]`                                           | Show the commits that changed a file, even across renames                                 |
+| INSPECT & COMPARE      | `git diff branchB...branchA`                                        | Show the diff of what is in branchA that is not in branchB                                |
+| INSPECT & COMPARE      | `git show [SHA]`                                                    | Show any object in Git in a human-readable format                                         |
+| TRACKING PATH CHANGES  | `git rm [file-name]`                                                | Delete the file from project and stage the removal for commit                             |
+| TRACKING PATH CHANGES  | `git mv [existing-path] [new-path]`                                 | Change an existing file path and stage the move                                           |
+| TRACKING PATH CHANGES  | `git log --stat -M`                                                 | Show all commit logs with indication of any paths that moved                              |
+| IGNORING PATTERNS      | `logs/.notes` / `pattern`                                           | Save a file with desired patterns as `.gitignore` with either direct string matches or wildcard globs |
+| IGNORING PATTERNS      | `git config --global core.excludesfile [file]`                      | System-wide ignore pattern for all local repositories (Don't use unless required)         |
+| SHARE & UPDATE         | `git remote add [alias] [url]`                                      | Add a git URL as an alias (remote repo alias is ORIGIN for most cases). For example: `git remote add origin [url]` |
+| SHARE & UPDATE         | `git remote set-url [alias] [url]`                                  | Change an already added Git Origin URL (remote repo alias is ORIGIN for most cases). For example: `git remote set-url origin [url]` |
+| SHARE & UPDATE         | `git fetch [alias]`                                                 | Fetch all the branches from that Git remote. For example: `git fetch origin [branch-name]` |
+| SHARE & UPDATE         | `git merge [alias]/[branch]`                                        | Merge a remote branch into your current branch to bring it up to date. For example: `git merge origin/master` |
+| SHARE & UPDATE         | `git push [alias] [branch]`                                         | Transmit local branch commits to the remote repository branch. For example: `git push origin master` |
+| SHARE & UPDATE         | `git pull`                                                          | Fetch and merge any commits from the tracking remote branch                               |
+| REWRITE HISTORY        | `git rebase [branch]`                                               | Apply any commits of current branch ahead of specified one                               |
+| REWRITE HISTORY        | `git reset --hard [commit]`                                         | Clear staging area, rewrite working tree from specified commit                           |
+| TEMPORARY COMMITS      | `git stash`                                                         | Save modified and staged changes                                                          |
+| TEMPORARY COMMITS      | `git stash list`                                                    | List stack-order of stashed file changes                                                 |
+| TEMPORARY COMMITS      | `git stash pop`                                                     | Write working from top of stash stack                                                     |
+| TEMPORARY COMMITS      | `git stash drop`                                                    | Discard the changes from top of stash stack                                               |

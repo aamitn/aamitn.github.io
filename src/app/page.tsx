@@ -59,6 +59,7 @@ export default function Page() {
       transition: { duration: 0.3, ease: "easeOut" } // Faster animation
     },
   };
+  
   const jellyBounce = {
     hidden: { opacity: 0, y: 50, rotate: -10, skewX: -5 },
     visible: (i: number) => ({
@@ -88,21 +89,38 @@ export default function Page() {
           exit={{ opacity: 0, y: 50 }}
           className="py-12 w-full"
         >
+
           <div className="mx-auto w-full max-w-full space-y-8">
             <div className="gap-2 flex justify-between">
               <div className="flex-col flex flex-1 space-y-1.5">
-                <BlurFadeText
-                  delay={BLUR_FADE_DELAY}
-                  className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                  yOffset={8}
-                  text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-                />
-                <BlurFadeText
-                  className="max-w-[600px] md:text-xl"
-                  delay={BLUR_FADE_DELAY}
-                  text={DATA.description}
-                />
+
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yOffset={8}
+                text={
+                  (<> 
+                    Hi, I&apos;m{" "}
+                    <span 
+                      className="bg-gradient-to-r from-blue-500 via-orange-500 to-purple-800 bg-clip-text text-transparent animate-gradient-pulse"
+                    >
+                      {DATA.name.split(" ")[0]}
+                    </span>{" "}
+                    👋
+                  </>) as unknown as string
+                }
+              />
+
+
+
+              <BlurFade delay={BLUR_FADE_DELAY * 4}>
+                <Markdown className="prose max-w-full text-pretty font-sans text-lg dark:text-slate-200 dark:prose-invert">
+                {DATA.description}
+                </Markdown>
+              </BlurFade>
+
               </div>
+
               <BlurFade delay={BLUR_FADE_DELAY}>
                 <Avatar className="size-28 border">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
@@ -288,66 +306,63 @@ export default function Page() {
 
 
         <section id="hackathons">
-  <div className="space-y-12 w-full py-12">
-    {/* Title Section with Scroll Animation */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: BLUR_FADE_DELAY * 12, duration: 0.8 }}
-      viewport={{ once: true }}
-      className="flex flex-col items-center justify-center space-y-4 text-center"
-    >
-      <div className="space-y-2">
-        <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-          Hackathons
-        </div>
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          I like building things
-        </h2>
-        <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-          During my time in university, I attended{" "}
-          {DATA.hackathons.length}+ hackathons. People from around the
-          country would come together and build incredible things in 2-3
-          days. It was eye-opening to see the endless possibilities
-          brought to life by a group of motivated and passionate
-          individuals.
-        </p>
-      </div>
-    </motion.div>
-
-    {/* Hackathons List Section with Scroll Animation */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: BLUR_FADE_DELAY * 14, duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-        {DATA.hackathons.map((project, id) => (
+        <div className="space-y-12 w-full py-12">
+          {/* Title Section with Scroll Animation */}
           <motion.div
-            key={project.title + project.dates}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: BLUR_FADE_DELAY * 15 + id * 0.05,
-              duration: 0.6,
-            }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: BLUR_FADE_DELAY * 12, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-center space-y-4 text-center"
+          >
+            <div className="space-y-2">
+              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                Publications
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                I like building things
+              </h2>
+              <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Here are some of my cherry-picked publications showing a total of {" "}
+                {DATA.hackathons.length} publications.
+                individuals.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Hackathons List Section with Scroll Animation */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: BLUR_FADE_DELAY * 12, duration: 0.4 }}
             viewport={{ once: true }}
           >
-            <HackathonCard
-              title={project.title}
-              description={project.description}
-              location={project.location}
-              dates={project.dates}
-              image={project.image}
-              links={project.links}
-            />
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.hackathons.map((project, id) => (
+                <motion.div
+                  key={project.title + project.dates}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: BLUR_FADE_DELAY * 15 + id * 0.05,
+                    duration: 0.6,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <HackathonCard
+                    title={project.title}
+                    description={project.description}
+                    location={project.location}
+                    dates={project.dates}
+                    image={project.image}
+                    links={project.links}
+                  />
+                </motion.div>
+              ))}
+            </ul>
           </motion.div>
-        ))}
-      </ul>
-    </motion.div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
       <motion.section
@@ -387,10 +402,10 @@ export default function Page() {
         >
           Want to chat? Just shoot me a DM{" "}
           <Link
-            href={DATA.contact.social.X.url}
-            className="text-blue-500 hover:underline"
+            href={DATA.contact.social.Discord.url}
+            className="text-indigo-300 hover:visited:"
           >
-            with a direct question on Twitter
+            with a direct question on Discord
           </Link>{" "}
           and I&apos;ll respond whenever I can. I will ignore all soliciting.
         </motion.p>

@@ -6,47 +6,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, Send } from "lucide-react";
-
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnqlpbvq"; // Replace with your Formspree endpoint
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [state, handleSubmit] = useForm("xnqlpbvq"); // Formspree form ID
 
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("");
-    setLoading(true);
-
-    try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Error sending message.");
-      }
-    } catch (error) {
-      setStatus("Error sending message.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <Card className="max-w-lg mx-auto p-6 rounded-xl shadow-md border border-gray-300 dark:border-blue-300/40 bg-white dark:bg-blue-400/20 transition-all duration-300 ease-out hover:shadow-xl hover:border-blue-500/40">
+        <CardHeader>
+          <CardTitle className="text-xl text-center">Message Sent!</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-center">Thank you for your message. We will get back to you soon!</p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="max-w-lg mx-auto p-6 rounded-xl shadow-md border border-gray-300 dark:border-blue-300/40 bg-white dark:bg-blue-400/20 transition-all duration-300 ease-out hover:shadow-xl hover:border-blue-500/40">
@@ -59,32 +37,50 @@ export default function ContactForm() {
             type="text"
             name="name"
             placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
             required
           />
+          <ValidationError
+            prefix="Name"
+            field="name"
+            errors={state.errors}
+          />
+
           <Input
             type="email"
             name="email"
             placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
             required
           />
+          <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+          />
+
           <Textarea
             name="message"
             placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
             required
             rows={4}
           />
-          <Button type="submit" className="w-full flex items-center gap-2">
-            {loading ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
-            {loading ? "Sending..." : "Send Message"}
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+
+          <Button type="submit" className="w-full flex items-center gap-2" disabled={state.submitting}>
+            {state.submitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
+            {state.submitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
-        {status && <p className="mt-4 text-center text-sm">{status}</p>}
+
+        {/* Check if there are any errors */}
+        {state.errors && Object.keys(state.errors).length > 0 && (
+          <p className="mt-4 text-center text-sm text-red-600">
+            There was an error submitting the form. Please try again.
+          </p>
+        )}
       </CardContent>
     </Card>
   );

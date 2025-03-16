@@ -25,7 +25,7 @@ export default function Navbar() {
     <motion.div
       animate={{ scale: expanded ? 1.05 : 0.95 }} // Start small, expand on scroll
       transition={{ type: "spring", stiffness: 150, damping: 15 }}
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14 text-amber-600 dark:text-blue-500"
     >
       <Dock
         className={cn(

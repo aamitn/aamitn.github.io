@@ -7,6 +7,11 @@ export const metadata: Metadata = {
       default: DATA.name,
       template: `%s | ${DATA.name}`,
     },
+    icons: {
+      icon: "/favicon.ico", // Fallback favicon
+      shortcut: "/favicon.ico",
+      apple: "/favicon.ico",
+    },
     description: DATA.description,
     keywords: [
       DATA.name,

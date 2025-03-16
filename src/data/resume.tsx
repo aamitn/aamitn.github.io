@@ -23,7 +23,9 @@ export const DATA = {
     "Kubernetes",
     "Java",
     "Spring",
-    "C++",
+    "Hibernate",
+    "JPA",
+    "Jakarta EE",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -153,13 +155,18 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://aamitn.github.io/simc",
+          href: "https://aamitn.github.io/simc/circuitjs.html",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Source",
+          href: "https://github.com/aamitn/simc",
+          icon: <Icons.github className="size-3" />,
+        },
+
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      image: "/simc.png",
+      video: "",
     },
     {
       title: "Pulsebridge",
@@ -175,9 +182,9 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://github.com/aamitn/pulsebridge-gateway/",
-          icon: <Icons.globe className="size-3" />,
+          type: "Source",
+          href: "https://github.com/aamitn/pulsebridge-app/",
+          icon: <Icons.github className="size-3" />,
         },
         {
           type: "Source",
@@ -185,16 +192,15 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/cover.png",
+      video: "",
     },
     {
       title: "TUSC-URL Shortener",
-      href: "https://llm.report",
+      href: "https://github.com/aamitn/URLShortener/",
       dates: "April 2023 - September 2023",
       active: true,
-      description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+      description:" A powerful and scalable URL shortener with integrated bio pages built using Spring Boot. ",
       technologies: [
         "Java",
         "Thymeleaf",
@@ -206,26 +212,20 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
+          href: "https://github.com/aamitn/URLShortener",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      image: "/tusc.png",
+      video: "",
     },
     {
       title: "TrakRok",
       href: "https://automatic.chat",
       dates: "April 2023 - March 2024",
       active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+      description:" Open Source GPS tracking hardware code for Arduino and middleware for Traccar tracking software",
       technologies: [
         "PHP",
         "MySQL",
@@ -248,8 +248,7 @@ export const DATA = {
       href: "https://automatic.chat",
       dates: "April 2023 - March 2024",
       active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+      description:" Tagger is a versatile Java application designed to simplify the process of replacing tags within text content. It provides a user-friendly GUI that allows users to interactively replace tag in a structured manner.",
       technologies: [
         "JAVA",
         "AWT",
@@ -261,9 +260,9 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/cover.png",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+        "",
     },
 
     {
@@ -272,7 +271,7 @@ export const DATA = {
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "A template-based report generation engine that supports vectors, repeatable content and high-availability, high-volume processing capability.",
       technologies: [
         "Java",
         "JPA",
@@ -289,9 +288,9 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/cover.png",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+        "",
     },
 
 

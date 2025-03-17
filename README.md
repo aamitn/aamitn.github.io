@@ -15,7 +15,7 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faamitn%2Faamitn.github.io)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/integration/start/deploy?repository=https://github.com/aamitn/aamitn.github.io)
 
-### Deployment Status ( [https://amitn.netlify.app/](https://amitn.netlify.app/) ) : [![Netlify Status](https://api.netlify.com/api/v1/badges/2ee9d02d-1b91-48d2-99c7-9256b461a6f2/deploy-status)](https://app.netlify.com/sites/amitn/deploys)
+### Deployment Status : [![Netlify Status](https://api.netlify.com/api/v1/badges/2ee9d02d-1b91-48d2-99c7-9256b461a6f2/deploy-status)](https://app.netlify.com/sites/amitn/deploys)
 
 Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
 

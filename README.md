@@ -10,6 +10,7 @@
   </tr>
 </table>
 
+The [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch of this repo holds the source code anad the [redirector](https://github.com/aamitn/aamitn.github.io/tree/redirector) branch holds GH Pages to redirect to netlify [site](https://amitn.netlofy.app) which is deployed from  [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch code.
 
 # Amit Nandi - Portfolio
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faamitn%2Faamitn.github.io)

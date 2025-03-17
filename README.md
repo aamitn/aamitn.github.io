@@ -12,6 +12,8 @@
 
 # Amit Nandi - Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faamitn%2Faamitn.github.io)
 
+# Deployment Status at  [https://amitn.netlify.app/](https://amitn.netlify.app/) : [![Netlify Status](https://api.netlify.com/api/v1/badges/2ee9d02d-1b91-48d2-99c7-9256b461a6f2/deploy-status)](https://app.netlify.com/sites/amitn/deploys)
+
 Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
 
 # Features

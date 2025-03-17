@@ -10,11 +10,13 @@
   </tr>
 </table>
 
-#### The [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch of this repo holds the source code and the [redirector](https://github.com/aamitn/aamitn.github.io/tree/redirector) branch holds GH Pages to redirect to netlify [site](https://amitn.netlofy.app) which is deployed from  [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch code.
+
 
 # Amit Nandi - Portfolio
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faamitn%2Faamitn.github.io)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/integration/start/deploy?repository=https://github.com/aamitn/aamitn.github.io)
+
+#### The [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch of this repo holds the source code and the [redirector](https://github.com/aamitn/aamitn.github.io/tree/redirector) branch holds GH Pages to redirect to netlify [site](https://amitn.netlofy.app) which is deployed from  [master](https://github.com/aamitn/aamitn.github.io/tree/master) branch code.
 
 ### Deployment Status : [![Netlify Status](https://api.netlify.com/api/v1/badges/2ee9d02d-1b91-48d2-99c7-9256b461a6f2/deploy-status)](https://app.netlify.com/sites/amitn/deploys)
 

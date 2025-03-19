@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       },
     },
     openGraph: {
-      title: DATA.name,
+      title: `${DATA.name} | Software Developer | Analyst`,
       description: DATA.description,
       url: DATA.url,
       siteName: DATA.name,

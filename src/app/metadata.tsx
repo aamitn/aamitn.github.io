@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       type: "profile",
       images: [
         {
-          url: "https://amitn.netlify.app/meog.png", // Fallback image URL
+          url: "https://amitn.netlify.app/meog1.png", // Fallback image URL
           width: 1200,
           height: 630,
           alt: DATA.name,

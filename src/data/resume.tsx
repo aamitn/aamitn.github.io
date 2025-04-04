@@ -75,7 +75,7 @@ export const DATA = {
   work: [
     {
       company: "Bandana Digitals",
-      href: "https://nvidia.com/",
+      href: "https://www.crunchbase.com/organization/bandana-digitals",
       badges: [],
       location: "Bengaluru, India",
       title: "Systems Engineer",
@@ -101,7 +101,7 @@ export const DATA = {
     {
       company: "Smartpower Automation",
       badges: [],
-      href: "https://shopify.com",
+      href: "https://smartpower.co.in/",
       location: "Kolkata, India",
       title: "Engineering Intern",
       logoUrl: "/sp.jpg",
@@ -114,7 +114,7 @@ export const DATA = {
   education: [
     {
       school: "Birla Institute of Technology Mesra",
-      href: "https://buildspace.so",
+      href: "https://www.bitmesra.ac.in/",
       degree: "Master's of Technology(M.Tech) in Production Engineering",
       logoUrl: "/bitm.png",
       start: "2018",
@@ -122,7 +122,7 @@ export const DATA = {
     },
     {
       school: "Heritage Institute of Technology Kolkata",
-      href: "https://uwaterloo.ca",
+      href: "https://www.heritageit.edu/",
       degree: "Bachelor's of Technology(B.Tech) in Instrumentation Engineering",
       logoUrl: "/hitk.png",
       start: "2014",
